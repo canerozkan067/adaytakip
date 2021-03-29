@@ -1,0 +1,6 @@
+com\adaytakip\controller\AdayController.class
+com\adaytakip\service\impl\AdayServiceImpl.class
+com\adaytakip\repository\AdayRepository.class
+com\adaytakip\service\AdayService.class
+com\adaytakip\AdaytakipApplication.class
+com\adaytakip\entity\Aday.class
