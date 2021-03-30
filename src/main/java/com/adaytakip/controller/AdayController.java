@@ -19,5 +19,6 @@ public class AdayController {
     @GetMapping("/adaylar")
     public List<Aday> tumAdaylariGetir() {
         return adayService.tumAdaylariGetir();
+        //sdasda
     }
 }
