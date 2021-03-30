@@ -3,9 +3,8 @@ package com.adaytakip.controller;
 import com.adaytakip.entity.Aday;
 import com.adaytakip.service.AdayService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,6 +18,15 @@ public class AdayController {
     @GetMapping("/adaylar")
     public List<Aday> tumAdaylariGetir() {
         return adayService.tumAdaylariGetir();
-        //sdasda
+    }
+
+    @GetMapping("/aday/{id}")
+    public Aday adayGetirById(@PathVariable("id") Long id) {
+        return adayService.adayGetirId(id);
+    }
+
+    @GetMapping("/adaygetir")
+    public Aday adayGetirByAd(@RequestBody Aday aday) {
+        return adayService.adayGetir(aday);
     }
 }

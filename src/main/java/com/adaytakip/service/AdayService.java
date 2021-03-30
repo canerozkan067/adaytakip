@@ -10,7 +10,7 @@ public interface AdayService {
 
     Aday adayGetirId(Long id);
 
-    Aday adayGetirAd(String ad);
+    Aday adayGetir(Aday aday);
 
 
 

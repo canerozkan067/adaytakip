@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -24,15 +25,19 @@ public class AdayServiceImpl implements AdayService {
 
     @Override
     public Aday adayGetirId(Long id) {
-
-        Aday idAday = adayRepository.getOne(id);
-        return idAday;
-
+        Optional<Aday> aday = adayRepository.findById(id);
+        return aday.orElse(null);
     }
 
     @Override
-    public Aday adayGetirAd(String ad) {
-      return null;
+    public Aday adayGetir(Aday aday) {
+        if (aday.getAd() != null) {
+            return adayRepository.findByAd(aday.getAd());
+        } else if (aday.getId() != null){
+            return adayRepository.getOne(aday.getId());
+        } else {
+            return null;
+        }
     }
 
 
