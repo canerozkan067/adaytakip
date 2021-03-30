@@ -29,4 +29,19 @@ public class AdayController {
     public Aday adayGetirByAd(@RequestBody Aday aday) {
         return adayService.adayGetir(aday);
     }
+
+    @PostMapping("/adayekle")
+    public Aday adayOlustur(@RequestBody Aday aday) {
+        return adayService.adayOlustur(aday);
+        //ResponseEntity
+        //sorun yok
+
+    }
+
+    @PutMapping("/adayguncelle/{id}")
+    public Aday adayGuncelle(@PathVariable(value ="id")Long id, @RequestBody Aday aday){
+        return adayService.adayGuncelle(id,aday);
+        //yanlış çalıştı
+        //yeni kayıt ekledi eski kayıt duruyor
+    }
 }

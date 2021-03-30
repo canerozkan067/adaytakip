@@ -40,5 +40,22 @@ public class AdayServiceImpl implements AdayService {
         }
     }
 
+    @Override
+    public Aday adayOlustur(Aday aday) {
+        //ekle veya kaydet olarak değiştirmem gerek
+       Aday yeniAday = adayRepository.save(aday);
+       return yeniAday;
+    }
+
+    @Override
+    public Aday adayGuncelle(Long id, Aday aday) {
+       Optional<Aday> adayid = adayRepository.findById(id);
+       if(adayid == null){
+           throw new IllegalArgumentException("Aday Id Gereklidir");
+           //fırlattım
+       }
+        return adayRepository.save(aday);
+    }
+
 
 }

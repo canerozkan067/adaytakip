@@ -12,7 +12,9 @@ public interface AdayService {
 
     Aday adayGetir(Aday aday);
 
+    Aday adayOlustur(Aday aday);
 
+    Aday adayGuncelle(Long id, Aday aday);
 
 
 }
