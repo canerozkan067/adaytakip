@@ -16,5 +16,7 @@ public interface AdayService {
 
     Aday adayGuncelle(Long id, Aday aday);
 
+    Boolean adaySil(Aday aday);
+
 
 }

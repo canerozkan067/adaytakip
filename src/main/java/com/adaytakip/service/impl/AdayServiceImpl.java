@@ -5,6 +5,7 @@ import com.adaytakip.repository.AdayRepository;
 import com.adaytakip.service.AdayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -49,12 +50,23 @@ public class AdayServiceImpl implements AdayService {
 
     @Override
     public Aday adayGuncelle(Long id, Aday aday) {
-       Optional<Aday> adayid = adayRepository.findById(id);
+       Aday adayid = adayRepository.getOne(id);
        if(adayid == null){
            throw new IllegalArgumentException("Aday Id Gereklidir");
            //fırlattım
        }
-        return adayRepository.save(aday);
+
+       adayid.setAd(aday.getAd());
+       adayid.setSoyad(aday.getSoyad());
+       adayid.setEmail(aday.getEmail());
+        return adayRepository.save(adayid);
+
+    }
+
+    @Override
+    public Boolean adaySil(Aday aday) {
+        adayRepository.deleteById(aday.getId());
+        return true;
     }
 
 

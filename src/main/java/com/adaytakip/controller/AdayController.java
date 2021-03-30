@@ -41,7 +41,12 @@ public class AdayController {
     @PutMapping("/adayguncelle/{id}")
     public Aday adayGuncelle(@PathVariable(value ="id")Long id, @RequestBody Aday aday){
         return adayService.adayGuncelle(id,aday);
-        //yanlış çalıştı
-        //yeni kayıt ekledi eski kayıt duruyor
+
+    }
+    @DeleteMapping("/adaysil/{id}")
+    public Boolean adaySil(@PathVariable(value = "id") Long id){
+         adayService.adaySil(adayGetirById(id));
+
+        return true;
     }
 }
