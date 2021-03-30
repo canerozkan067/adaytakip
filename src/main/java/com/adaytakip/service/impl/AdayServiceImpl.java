@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 
+
 @Service
 @Transactional
 public class AdayServiceImpl implements AdayService {
@@ -20,4 +21,19 @@ public class AdayServiceImpl implements AdayService {
     public List<Aday> tumAdaylariGetir() {
         return adayRepository.findAll();
     }
+
+    @Override
+    public Aday adayGetirId(Long id) {
+
+        Aday idAday = adayRepository.getOne(id);
+        return idAday;
+
+    }
+
+    @Override
+    public Aday adayGetirAd(String ad) {
+      return null;
+    }
+
+
 }

@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "aday")
 @Data
-@NoArgsConstructor
+// @NoArgsConstructor  *data constructorları da oluşturuyor
 public class Aday {
 
     @Id
