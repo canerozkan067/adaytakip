@@ -5,7 +5,6 @@ import com.adaytakip.repository.AdayRepository;
 import com.adaytakip.service.AdayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -34,7 +33,7 @@ public class AdayServiceImpl implements AdayService {
     public Aday adayGetir(Aday aday) {
         if (aday.getAd() != null) {
             return adayRepository.findByAd(aday.getAd());
-        } else if (aday.getId() != null){
+        } else if (aday.getId() != null) {
             return adayRepository.getOne(aday.getId());
         } else {
             return null;
@@ -44,21 +43,21 @@ public class AdayServiceImpl implements AdayService {
     @Override
     public Aday adayOlustur(Aday aday) {
         //ekle veya kaydet olarak değiştirmem gerek
-       Aday yeniAday = adayRepository.save(aday);
-       return yeniAday;
+        Aday yeniAday = adayRepository.save(aday);
+        return yeniAday;
     }
 
     @Override
     public Aday adayGuncelle(Long id, Aday aday) {
-       Aday adayid = adayRepository.getOne(id);
-       if(adayid == null){
-           throw new IllegalArgumentException("Aday Id Gereklidir");
-           //fırlattım
-       }
+        Aday adayid = adayRepository.getOne(id);
+        if (adayid == null) {
+            throw new IllegalArgumentException("Aday Id Gereklidir");
+            //fırlattım
+        }
 
-       adayid.setAd(aday.getAd());
-       adayid.setSoyad(aday.getSoyad());
-       adayid.setEmail(aday.getEmail());
+        adayid.setAd(aday.getAd());
+        adayid.setSoyad(aday.getSoyad());
+        adayid.setEmail(aday.getEmail());
         return adayRepository.save(adayid);
 
     }
@@ -71,9 +70,9 @@ public class AdayServiceImpl implements AdayService {
 
     @Override
     public Boolean adaySilByAd(Aday aday) {
-      Aday aday1 = adayRepository.findByAd(aday.getAd());
-      adayRepository.delete(aday1);
-       return true;
+        Aday aday1 = adayRepository.findByAd(aday.getAd());
+        adayRepository.delete(aday1);
+        return true;
     }
 
 
