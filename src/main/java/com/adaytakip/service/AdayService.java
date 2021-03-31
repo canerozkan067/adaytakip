@@ -18,5 +18,5 @@ public interface AdayService {
 
     Boolean adaySil(Aday aday);
 
-
+    Boolean adaySilByAd(Aday aday);
 }

@@ -46,7 +46,13 @@ public class AdayController {
     @DeleteMapping("/adaysil/{id}")
     public Boolean adaySil(@PathVariable(value = "id") Long id){
          adayService.adaySil(adayGetirById(id));
-
+//bunda bi gariplik var ama çalışıyor.
         return true;
+    }
+    @DeleteMapping("/adaysilad")
+    public Boolean adaySilByAd(@RequestBody Aday aday){
+       adayService.adaySilByAd(aday);
+        return true;
+        //aynı isimde iki kişi varsa hata fırlatıyor
     }
 }

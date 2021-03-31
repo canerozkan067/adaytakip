@@ -69,5 +69,12 @@ public class AdayServiceImpl implements AdayService {
         return true;
     }
 
+    @Override
+    public Boolean adaySilByAd(Aday aday) {
+      Aday aday1 = adayRepository.findByAd(aday.getAd());
+      adayRepository.delete(aday1);
+       return true;
+    }
+
 
 }
