@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 @Table(name = "aday")
@@ -36,11 +37,11 @@ public class Aday {
     private Date dogumTarihi;
 
     @JoinColumn(name = "aday_adres")
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER)
     private List<AdayAdres> adayAdres; //join
 
     @JoinColumn(name = "aday_nufus_bilgi")
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     private AdayNufusBilgi adayNufusBilgi; //join
 
     /*@JoinColumn(name = "aday_diger_bilgi")
