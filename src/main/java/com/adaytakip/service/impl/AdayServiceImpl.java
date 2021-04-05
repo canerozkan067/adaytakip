@@ -63,8 +63,8 @@ public class AdayServiceImpl implements AdayService {
     }
 
     @Override
-    public Boolean adaySil(Aday aday) {
-        adayRepository.deleteById(aday.getId());
+    public Boolean adaySil(Long id) {
+        adayRepository.deleteById(id);
         return true;
     }
 
