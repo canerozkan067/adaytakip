@@ -1,7 +1,9 @@
 package com.adaytakip.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,8 +13,10 @@ import java.util.Optional;
 @Entity
 @Table(name = "aday")
 @Data
+
 @NoArgsConstructor
-public class Aday {
+@Where(clause = "status=1")
+public class Aday extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -44,7 +48,15 @@ public class Aday {
     @OneToOne(fetch = FetchType.EAGER)
     private AdayNufusBilgi adayNufusBilgi; //join
 
-    /*@JoinColumn(name = "aday_diger_bilgi")
+    public void setStatus(Statu status) {
+        this.status = status;
+    }
+    @Column(name = "status")
+    private Statu status;
+
+
+
+/*@JoinColumn(name = "aday_diger_bilgi")
     @OneToOne(fetch = FetchType.LAZY)
     private AdayDigerBilgi digerBilgi; //join*/
 }

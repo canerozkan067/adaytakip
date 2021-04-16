@@ -1,6 +1,7 @@
 package com.adaytakip.service.impl;
 
 import com.adaytakip.entity.Aday;
+import com.adaytakip.entity.Statu;
 import com.adaytakip.repository.AdayRepository;
 import com.adaytakip.service.AdayService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,6 +73,13 @@ public class AdayServiceImpl implements AdayService {
     public Boolean adaySilByAd(Aday aday) {
         Aday aday1 = adayRepository.findByAd(aday.getAd());
         adayRepository.delete(aday1);
+        return true;
+    }
+
+    @Override
+    public Boolean adaySoftDelete(Long id) {
+        Aday aday = adayRepository.getOne(id);
+        aday.setStatus(Statu.PASSIVE);
         return true;
     }
 

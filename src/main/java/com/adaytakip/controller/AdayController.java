@@ -56,4 +56,10 @@ public class AdayController {
         return true;
         //aynı isimde iki kişi varsa hata fırlatıyor
     }
+    @DeleteMapping("/adaysilsoft/{id}")
+    public Boolean adaySoftDelete(@PathVariable(value = "id") Long id){
+        adayService.adaySoftDelete(id);
+        return true;
+
+    }
 }

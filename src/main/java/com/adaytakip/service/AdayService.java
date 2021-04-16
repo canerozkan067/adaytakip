@@ -2,6 +2,7 @@ package com.adaytakip.service;
 
 import com.adaytakip.entity.Aday;
 
+
 import java.util.List;
 
 public interface AdayService {
@@ -19,4 +20,6 @@ public interface AdayService {
     Boolean adaySil(Long id);
 
     Boolean adaySilByAd(Aday aday);
+
+    Boolean adaySoftDelete(Long id);
 }
