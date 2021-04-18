@@ -1,13 +1,12 @@
 package com.adaytakip.repository;
 
-import com.adaytakip.entity.Aday;
+import com.adaytakip.entity.AdayAdres;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
 @Repository
-public interface AdayRepository extends JpaRepository<Aday, UUID> {
+public interface AdayAdresRepository extends JpaRepository<AdayAdres, UUID> {
 
-    Aday findByAd(String ad);
 }

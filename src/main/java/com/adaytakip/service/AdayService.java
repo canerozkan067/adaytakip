@@ -1,25 +1,29 @@
 package com.adaytakip.service;
 
+import com.adaytakip.dto.AdayAdresDto;
+import com.adaytakip.dto.AdayDto;
 import com.adaytakip.entity.Aday;
 
 
 import java.util.List;
+import java.util.UUID;
 
 public interface AdayService {
 
-    List<Aday> tumAdaylariGetir();
+    List<AdayDto> tumAdaylariGetir();
 
-    Aday adayGetirId(Long id);
+    List<AdayAdresDto> tumAdayAdresleriGetir();
 
-    Aday adayGetir(Aday aday);
+//    AdayDto adayGetirId(UUID id);
+//
+//    AdayDto adayGetir(AdayDto aday);
+//
+//    AdayDto adayOlustur(AdayDto aday);
+//
+//    AdayDto adayGuncelle(UUID id, AdayDto aday);
+//
+//    Boolean adaySil(UUID id);
+//
+//    void adaySilByAd(AdayDto aday);
 
-    Aday adayOlustur(Aday aday);
-
-    Aday adayGuncelle(Long id, Aday aday);
-
-    Boolean adaySil(Long id);
-
-    Boolean adaySilByAd(Aday aday);
-
-    Boolean adaySoftDelete(Long id);
 }

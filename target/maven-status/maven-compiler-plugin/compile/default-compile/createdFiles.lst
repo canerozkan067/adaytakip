@@ -1,6 +1,13 @@
-com\adaytakip\controller\AdayController.class
-com\adaytakip\service\impl\AdayServiceImpl.class
 com\adaytakip\repository\AdayRepository.class
-com\adaytakip\service\AdayService.class
+com\adaytakip\dto\AdayNufusDto.class
 com\adaytakip\AdaytakipApplication.class
 com\adaytakip\entity\Aday.class
+com\adaytakip\entity\AdayNufus.class
+com\adaytakip\entity\BaseEntity.class
+com\adaytakip\controller\AdayController.class
+com\adaytakip\dto\BaseDto.class
+com\adaytakip\entity\AdayAdres.class
+com\adaytakip\service\impl\AdayServiceImpl.class
+com\adaytakip\service\AdayService.class
+com\adaytakip\dto\AdayAdresDto.class
+com\adaytakip\dto\AdayDto.class
